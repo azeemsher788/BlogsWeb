@@ -1,7 +1,6 @@
 # pylint: disable=missing-function-docstring
 # pylint: disable=missing-module-docstring
 
-import os
 from dotenv import load_dotenv
 from flask import Flask, render_template, request, jsonify
 from data import Post
@@ -11,8 +10,7 @@ load_dotenv()
 post = Post()
 blogs_data = post.data[::-1]
 app = Flask(__name__)
-# Add your secret key in .env file
-app.secret_key = os.getenv("APP_KEY")
+
 
 
 @app.route('/')
